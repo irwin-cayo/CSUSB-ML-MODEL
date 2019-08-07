@@ -35,7 +35,7 @@ args = vars(ap.parse_args())
 
 # initialize the number of epochs to train for, initial learning rate,
 # batch size, and image dimensions
-EPOCHS = 150
+EPOCHS = 100
 INIT_LR = 1e-3
 BS = 32
 IMAGE_DIMS = (96, 96, 3)
@@ -93,11 +93,13 @@ model.compile(loss="categorical_crossentropy", optimizer=opt,
 
 # train the network
 print("[INFO] training network...")
-H = model.fit_generator(
-	aug.flow(trainX, trainY, batch_size=BS),
-	validation_data=(testX, testY),
-	steps_per_epoch=len(trainX) // BS,
-	epochs=EPOCHS, verbose=1)
+# H = model.fit_generator(
+# 	aug.flow(trainX, trainY, batch_size=BS),
+# 	validation_data=(testX, testY),
+# 	steps_per_epoch=len(trainX) // BS,
+# 	epochs=EPOCHS, verbose=1)
+
+H = model.fit(trainX, trainY, batch_size=32, epochs=EPOCHS, validation_data=(testX, testY))
 
 # save the model to disk
 print("[INFO] serializing network...")
