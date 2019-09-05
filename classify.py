@@ -1,5 +1,5 @@
 # USAGE
-# python classify.py --model pk.model --labelbin pk.pickle --image examples/100.jpg
+# python classify.py --model split20.model --labelbin split20.pickle --image examples/100.jpg
 
 # import the necessary packages
 from keras.preprocessing.image import img_to_array
