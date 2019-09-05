@@ -88,12 +88,6 @@ model.compile(loss="categorical_crossentropy", optimizer=opt,
 
 # train the network
 print("[INFO] training network...")
-# H = model.fit_generator(
-# 	aug.flow(trainX, trainY, batch_size=BS),
-# 	validation_data=(testX, testY),
-# 	steps_per_epoch=len(trainX) // BS,
-# 	epochs=EPOCHS, verbose=1)
-
 H = model.fit(trainX, trainY, batch_size=32, epochs=EPOCHS, validation_data=(testX, testY))
 
 # save the model to disk
