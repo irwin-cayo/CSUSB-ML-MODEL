@@ -1,5 +1,5 @@
 # USAGE
-# python train.py --dataset dataset --model pk.model --labelbin pk.pickle
+# python train.py --dataset name/of/dataset --model give/name/to/model.model --labelbin pk.pickle
 
 # set the matplotlib backend so figures can be saved in the background
 import matplotlib
